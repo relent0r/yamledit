@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: challenge2depmod
+  labels:
+    app: mcmoded
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraftmod
+  template:
+    metadata:
+      labels:
+        app: minecraftmod
+    spec:
+      containers:
+      - name: '"MineCraftModified"'
+        image: relent0r/minecraft-server:1.0-alpine
+        ports:
+        - containerPort: 25565
+        resources:
+          limits:
+            cpu: 500m
+            memory: 256Mi
+          requests:
+            cpu: 500m
+            memory: 128Mi
+        env:
+        - name: someenvironmentvariable
+          value: this is a string
+        volumeMounts:
+        - mountPath: /data/
+          name: volume
+      volumes:
+      - name: volume
+        persistentVolumeClaim:
+          claimName: azurefile
