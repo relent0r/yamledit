@@ -8,4 +8,10 @@ class yamlinputcon:
 
 jim = yamlinputcon()
 values = jim.convertInput(yamlex)
-print(values)
+for value in values:
+  strValue = "["+value+"]"
+  newValue = []
+  newValue.append(strValue)
+  
+print(newValue)
+  
