@@ -1,14 +1,11 @@
 
 yamlex = "template.spec.brave"
 
-class yamlinputcon:
-    def __init__(self, yamlInput):
-        self.yamlInput = yamlInput
-    
-    def convertInput(yaml):
-        yamlDataSet = yamlInput.split('.')
+class yamlinputcon:       
+    def convertInput(self, yaml):
+        yamlDataSet = yaml.split('.')
         return yamlDataSet
 
-jim = yamlinputcon(yamlex)
-values = jim.convertInput()
+jim = yamlinputcon()
+values = jim.convertInput(yamlex)
 print(values)
