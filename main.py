@@ -4,7 +4,7 @@ from ruamel.yaml import YAML
 inputFile = "E:\\Python\\yamledit\\example.yaml"
 inputImageName = '"MineCraftModified"'
 inputMLAName = "mcmoded"
-
+ 
 # Use pathlib to load the external yaml file. Easier than open method.
 yamlFile = Path(inputFile)
 yaml = YAML()
